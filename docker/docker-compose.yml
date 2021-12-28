@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  node:
+    build:
+      context: ./node
+      dockerfile: Dockerfile
+    container_name: node-poligon-front
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ../:/var/project
+    ports:
+      - ${NODE_PORT}:3000
