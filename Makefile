@@ -15,6 +15,9 @@ down:						## Down project
 npm_start:					## NPM Start
 	cd ./docker && docker-compose exec node npm start
 
+npm_i:
+	cd ./docker && docker-compose exec node npm i
+
 help:	## Show Project commands
 	@#echo ${Cyan}"\t\t This project 'poligon' REST API!"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
